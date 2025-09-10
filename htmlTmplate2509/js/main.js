@@ -5,12 +5,9 @@ function potire() {
     // アラート表示
     alert(name + "さん、ポチりました！");
 
-    // ここは画面遷移先のURLを作っているだけなので無視してOK
-    let url = new URL(window.location.href);
-    url.pathname = '/events/htmlTmplate2509/html/helloworld.html';
-    url.searchParams.set('name', name);
-    // 画面遷移
-    window.location.href = url.href;
+    // ここは画面遷移先のURLを作って実行しているだけなので無視してOK
+    window.location.href = `helloworld.html?name=${encodeURIComponent(name)}`;
+
 }
 
 // HTML側のボタンと紐づける
